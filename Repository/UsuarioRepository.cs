@@ -27,6 +27,11 @@ namespace apifinal.Repository
             return (_context.SaveChanges() >= 0);
         }
 
+        public IEnumerable<Usuario> TraerTodosLosUsuarios()
+        {
+            return _context.Usuarios.ToList();
+        }
+
         public Usuario? ValidacionUsuario(AuthenticationRequestBody authRequestBody)
         {
             return _context.Usuarios.FirstOrDefault(p => p.UserName == authRequestBody.UserName && p.Password == authRequestBody.Password);

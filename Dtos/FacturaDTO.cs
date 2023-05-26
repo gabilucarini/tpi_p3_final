@@ -4,7 +4,6 @@ namespace apifinal.Dtos
 {
     public class FacturaDTO
     {
-    public int Id { get; set; }
     
     [Required(ErrorMessage = "El número de factura es obligatorio.")]
     public int NumeroFactura { get; set; }

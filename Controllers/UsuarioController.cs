@@ -29,5 +29,19 @@ namespace apifinal.Controllers
                 return BadRequest("Error al crear usuario");
             }
         }
+        [HttpGet]
+        public ActionResult<IEnumerable<UsuarioDTO>> TraerTodosLosUsuarios()
+        {
+                        
+            try
+            {
+              
+                var usuarios = _services.TraerTodosLosUsuarios();
+                return Ok(usuarios);
+            }
+            catch{
+                return BadRequest("Error al traer todos los usuarios");
+            }
+        }
     }
 }

@@ -23,5 +23,11 @@ namespace apifinal.Services
             _repository.AgregarUsuario(usuarioNuevo);
             _repository.SaveChange();
         }
+
+        public IEnumerable<UsuarioDTO> TraerTodosLosUsuarios()
+        {
+            var usuario = _repository.TraerTodosLosUsuarios();
+            return _mapper.Map<IEnumerable<UsuarioDTO>>(usuario);
+        }
     }
 }

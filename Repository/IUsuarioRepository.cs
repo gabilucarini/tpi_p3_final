@@ -10,6 +10,7 @@ namespace apifinal.Repository
     public interface IUsuarioRepository
     {
         void AgregarUsuario(Usuario usuario);
+        IEnumerable<Usuario> TraerTodosLosUsuarios();
         public Usuario? ValidacionUsuario(AuthenticationRequestBody authRequestBody);
         bool SaveChange();
     }
